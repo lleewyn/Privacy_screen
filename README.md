@@ -1,4 +1,5 @@
 # Privacy Screen - Spotlight Your Focus
+> Helps protect your screen and prevent prying eyes!
 
 A modern desktop application designed to enhance privacy and focus by using a "Spotlight" effect. The app highlights the area around your cursor while dimming or blurring the rest of the screen.
 
