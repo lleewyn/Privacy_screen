@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Screen - Panel</title>
+    <link rel="stylesheet" href="panel-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Control Panel -->
+    <div id="controlPanel" class="control-panel">
+        <div class="panel-header">
+            <h2>⚙️ Privacy Screen</h2>
+            <button id="closeBtn" class="close-btn">✕</button>
+        </div>
+
+        <div class="panel-content">
+            <!-- Privacy Screen Toggle -->
+            <div class="control-group privacy-toggle-group">
+                <label>Privacy Screen</label>
+                <div class="toggle-switch-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="privacyToggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span id="privacyStatus" class="toggle-status">Đang bật</span>
+                </div>
+
+                <label style="margin-top: 15px; display: block;">Hiện nút cài đặt nổi (⚙️)</label>
+                <div class="toggle-switch-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="floatingButtonToggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span id="floatingButtonStatus" class="toggle-status">Đang hiện</span>
+                </div>
+            </div>
+
+            <!-- Spotlight Size -->
+            <div class="control-group">
+                <label>
+                    <span>Kích thước Spotlight</span>
+                    <span id="sizeValue">150px</span>
+                </label>
+                <input type="range" id="sizeSlider" min="50" max="500" value="150" step="10">
+            </div>
+
+            <!-- Overlay Opacity -->
+            <div class="control-group">
+                <label>
+                    <span>Độ tối</span>
+                    <span id="opacityValue">80%</span>
+                </label>
+                <input type="range" id="opacitySlider" min="30" max="95" value="80" step="5">
+            </div>
+
+            <!-- Shape Selection -->
+            <div class="control-group">
+                <label>Hình dạng</label>
+                <div class="button-group">
+                    <button id="circleBtn" class="shape-btn active">⭕ Tròn</button>
+                    <button id="rectangleBtn" class="shape-btn">▭ Chữ nhật</button>
+                </div>
+            </div>
+
+            <!-- Rectangle Aspect Ratio (only visible when rectangle is selected) -->
+            <div class="control-group" id="aspectRatioGroup" style="display: none;">
+                <label>Điều chỉnh tỷ lệ khung hình</label>
+
+                <!-- Mode selection -->
+                <div class="button-group" style="margin-bottom: 10px;">
+                    <button id="sliderModeBtn" class="mode-btn active">📏 Slider</button>
+                    <button id="freeModeBtn" class="mode-btn">🔧 Tự kéo</button>
+                </div>
+
+                <!-- Slider mode -->
+                <div id="sliderModeControls" style="display: block;">
+                    <input type="range" id="aspectRatioSlider" min="10" max="50" value="30" step="5">
+                    <span id="aspectRatioValue">3.0:1</span>
+                </div>
+
+            </div>
+
+            <!-- Mode Toggle -->
+            <div class="control-group">
+                <label>Chế độ</label>
+                <div class="button-group">
+                    <button id="darkModeBtn" class="mode-btn active">🌙 Tối</button>
+                    <button id="lightModeBtn" class="mode-btn">☀️ Mờ</button>
+                </div>
+            </div>
+
+            <!-- Pomodoro Timer -->
+            <div class="control-group pomodoro-section">
+                <label>Pomodoro Timer</label>
+                <div class="timer-display" id="timerDisplay">25:00</div>
+                <div class="button-group">
+                    <button id="startBtn" class="timer-btn">▶️ Bắt đầu</button>
+                    <button id="pauseBtn" class="timer-btn" disabled>⏸️ Tạm dừng</button>
+                    <button id="resetBtn" class="timer-btn">🔄 Reset</button>
+                </div>
+                <div class="timer-status" id="timerStatus">Sẵn sàng tập trung!</div>
+            </div>
+
+            <!-- Hotkeys Info -->
+            <div class="hotkeys-info">
+                <h3>Phím tắt</h3>
+                <ul>
+                    <li><kbd>F1</kbd> Ẩn/Hiện</li>
+                    <li><kbd>F2</kbd> Tăng kích thước</li>
+                    <li><kbd>F3</kbd> Giảm kích thước</li>
+                    <li><kbd>F4</kbd> Đổi chế độ</li>
+                    <li><kbd>F5</kbd> Đổi hình dạng</li>
+                    <li><kbd>F6</kbd> Độ tối</li>
+                    <li><kbd>F7</kbd> Đóng băng vị trí</li>
+                    <li><kbd>ESC</kbd> Thoát</li>
+                </ul>
+            </div>
+
+            <!-- Quit Button -->
+            <button id="quitBtn" class="quit-btn">🚪 Thoát ứng dụng</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="panel-controls.js"></script>
+    <script src="pomodoro.js"></script>
+    <script src="controls-hotkeys.js"></script>
+</body>
+
+</html>

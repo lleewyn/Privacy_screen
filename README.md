@@ -42,8 +42,8 @@
 ### Các bước cài đặt
 1. **Clone dự án**:
    ```bash
-   git clone https://github.com/your-username/privacy-screen.git
-   cd privacy-screen
+   git clone https://github.com/lleewyn/Privacy_screen.git
+   cd Privacy_screen
    ```
 
 2. **Cài đặt dependencies**:
